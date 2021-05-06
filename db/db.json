@@ -1,0 +1,211 @@
+{
+    "settings": {
+        "difficulties": {
+            "casual": {
+                "time": 32,
+                "cards": 8
+            },
+            "medium": {
+                "time": 90,
+                "cards": 16
+            },
+            "hard": {
+                "time": 192,
+                "cards": 32
+            }
+        }
+    },
+    "users": [{
+            "id": 1,
+            "first_name": "Nisse",
+            "last_name": "Mercer",
+            "email": "nmercer0@umn.edu",
+            "gender": "Female",
+            "company": "Skinte"
+        },
+        {
+            "id": 2,
+            "first_name": "Eugenio",
+            "last_name": "Dunbabin",
+            "email": "edunbabin1@over-blog.com",
+            "gender": "Male",
+            "company": "Brainbox"
+        },
+        {
+            "id": 4,
+            "first_name": "Harwilll",
+            "last_name": "Szymanski",
+            "email": "hszymanski3@yolasite.com",
+            "gender": "Male",
+            "company": "Rhybox"
+        },
+        {
+            "id": 5,
+            "first_name": "Latrena",
+            "last_name": "O' Mara",
+            "email": "lomara4@yolasite.com",
+            "gender": "Female",
+            "company": "Dynabox"
+        },
+        {
+            "id": 6,
+            "first_name": "Mattheus",
+            "last_name": "Jovis",
+            "email": "mjovis5@plala.or.jp",
+            "gender": "Male",
+            "company": "Trudeo"
+        },
+        {
+            "id": 7,
+            "first_name": "Jacenta",
+            "last_name": "Chaney",
+            "email": "jchaney6@bloomberg.com",
+            "gender": "Female",
+            "company": "Trupe"
+        },
+        {
+            "id": 8,
+            "first_name": "North",
+            "last_name": "Waterstone",
+            "email": "nwaterstone7@tinyurl.com",
+            "gender": "Male",
+            "company": "Podcat"
+        },
+        {
+            "id": 9,
+            "first_name": "Rudolfo",
+            "last_name": "Shasnan",
+            "email": "rshasnan8@buzzfeed.com",
+            "gender": "Male",
+            "company": "Photospace"
+        },
+        {
+            "id": 10,
+            "first_name": "Mart",
+            "last_name": "Ballefant",
+            "email": "mballefant9@arstechnica.com",
+            "gender": "Male",
+            "company": "Zoomdog"
+        },
+        {
+            "id": 11,
+            "first_name": "Adrien",
+            "last_name": "Cornewall",
+            "email": "acornewalla@huffingtonpost.com",
+            "gender": "Male",
+            "company": "Browsetype"
+        },
+        {
+            "id": 12,
+            "first_name": "Killian",
+            "last_name": "Marousek",
+            "email": "kmarousekb@about.me",
+            "gender": "Male",
+            "company": "Skibox"
+        },
+        {
+            "id": 13,
+            "first_name": "Dalis",
+            "last_name": "Gunter",
+            "email": "dgunterc@google.nl",
+            "gender": "Male",
+            "company": "Feednation"
+        },
+        {
+            "id": 14,
+            "first_name": "Laurella",
+            "last_name": "Bollini",
+            "email": "lbollinid@domainmarket.com",
+            "gender": "Female",
+            "company": "Fivespan"
+        },
+        {
+            "id": 15,
+            "first_name": "Matti",
+            "last_name": "McFade",
+            "email": "mmcfadee@utexas.edu",
+            "gender": "Female",
+            "company": "Realbridge"
+        },
+        {
+            "id": 16,
+            "first_name": "Emalia",
+            "last_name": "Arthur",
+            "email": "earthurf@paypal.com",
+            "gender": "Female",
+            "company": "Brainverse"
+        },
+        {
+            "id": 17,
+            "first_name": "Kurtis",
+            "last_name": "Brogini",
+            "email": "kbroginig@nymag.com",
+            "gender": "Male",
+            "company": "Oyondu"
+        },
+        {
+            "id": 18,
+            "first_name": "Elvera",
+            "last_name": "Kuna",
+            "email": "ekunah@berkeley.edu",
+            "gender": "Female",
+            "company": "Photojam"
+        },
+        {
+            "id": 19,
+            "first_name": "Cathlene",
+            "last_name": "Ledrun",
+            "email": "cledruni@sina.com.cn",
+            "gender": "Female",
+            "company": "Feednation"
+        },
+        {
+            "id": 20,
+            "first_name": "Gary",
+            "last_name": "Briatt",
+            "email": "gbriattj@lulu.com",
+            "gender": "Male",
+            "company": "Jetpulse"
+        },
+        {
+            "id": 21,
+            "first_name": "Tallia",
+            "last_name": "Wyllcock",
+            "email": "twyllcockk@printfriendly.com",
+            "gender": "Female",
+            "company": "Skivee"
+        },
+        {
+            "id": 22,
+            "first_name": "Verge",
+            "last_name": "Tibbotts",
+            "email": "vtibbottsl@opera.com",
+            "gender": "Male",
+            "company": "Divavu"
+        },
+        {
+            "id": 23,
+            "first_name": "Alonso",
+            "last_name": "Le Bosse",
+            "email": "alebossem@dailymail.co.uk",
+            "gender": "Male",
+            "company": "Skyndu"
+        },
+        {
+            "id": 24,
+            "first_name": "Stu",
+            "last_name": "Cheater",
+            "email": "scheatern@multiply.com",
+            "gender": "Male",
+            "company": "Wikizz"
+        },
+        {
+            "id": 25,
+            "first_name": "Major",
+            "last_name": "Impson",
+            "email": "mimpsono@tinyurl.com",
+            "gender": "Male",
+            "company": "Gigabox"
+        }
+    ]
+}
