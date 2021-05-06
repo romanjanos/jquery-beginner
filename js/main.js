@@ -45,30 +45,32 @@ $(() => {
         });
     };
 
-
-    $(window).on('keyup', (e) => {
-        // Pause. (p)
-        if (e.keyCode === 80) {
-            if (Game.attr('data-paused') === '1') {
-                Game.attr('data-paused', '0');
-                $('.timer').css('animation-play-state', 'running')
-                $('.pause').remove();
-            } else {
-                Game.attr('data-paused', '1');
-                $('.timer').css('animation-play-state', 'paused');
-                Game.after('<div class="pause"></div>');
+    // Init keyboard events.
+    const initKeyboard = () => {
+        $(window).off().on('keyup', (e) => {
+            // Pause. (p)
+            if (e.keyCode === 80) {
+                if (Game.attr('data-paused') === '1') {
+                    Game.attr('data-paused', '0');
+                    $('.timer').css('animation-play-state', 'running')
+                    $('.pause').remove();
+                } else {
+                    Game.attr('data-paused', '1');
+                    $('.timer').css('animation-play-state', 'paused');
+                    Game.after('<div class="pause"></div>');
+                }
+    
+            } else if (e.keyCode === 27) {
+                // Escape. (esc)
+                startScreen('flip');
+                if (Game.attr('data-paused') === '1') {
+                    Game.attr('data-paused', '0');
+                    $('.pause').remove();
+                }
+                $(window).off();
             }
-
-        } else if (e.keyCode === 27) {
-            // Escape. (esc)
-            startScreen('flip');
-            if (Game.attr('data-paused') === '1') {
-                Game.attr('data-paused', '0');
-                $('.pause').remove();
-            }
-            $(window).off();
-        }
-    });
+        });
+    }
 
     // Init timer.
     const initTimer = (timer) => {
@@ -85,6 +87,7 @@ $(() => {
     // Start Game
     $('.play').on('click', (ev) => {
         ev.preventDefault();
+        initKeyboard();
         increase('flip_abandoned');
         $('.info').fadeOut();
 
@@ -108,8 +111,77 @@ $(() => {
 
         // Create and shuffle cards.
         for (let i = 0; i < settings.difficulties[level].cards; i++) {
-            obj.push(i);            
+            obj.push(i);
         }
+
+        const shu = shuffle($.merge(obj, obj));
+        const cardSize = 100 / Math.sqrt(shu.length);
+
+        for (let i = 0; i < shu.length; i++) {
+            let code = shu[i];
+            code = code < 10 ? `0${code}` : code;
+            code = code == 30 ? 10 : code;
+            code = code == 31 ? 21 : code;
+            $(
+                `<div class="card" style="width:${cardSize}%;height:${cardSize}%;">` +
+                `<div class="flipper"><div class="f"></div><div class="b" data-f="&#xf0${code};"></div></div>` +
+                `</div>`
+            ).appendTo(Game);
+        }
+
+        // Set card actions.
+        Game.find('.card').on('mousedown', e => setCardActions(e));
+    };
+
+    // Actions on the clicked game card.
+
+    const setCardActions = (e) => {
+        if (Game.attr('data-paused') === '1') {
+            return
+        }
+
+        // Flip card.
+        const data = $(e.currentTarget)
+            .addClass('active')
+            .find('.b')
+            .attr('data-f')
+
+        // More than one card is active.
+        if (Game.find('.card.active').length > 1) {
+            const to = setTimeout( () => {
+                clearTimeout(to);
+                const thisCard = Game.find(`.active .b[data-f=${data}]`);
+
+                if (thisCard.length > 1) {
+                    thisCard
+                        .parents('.card')
+                        .toggleClass('active card found')
+                        .empty();
+
+                    // Win game.
+                    if (!Game.find('.card').length) {
+                        const time = $.now() - startGame;
+                        startScreen('nice')
+                    }
+                }   else {
+                    Game.find('.card.active').removeClass('active');
+                }
+            }, 401);
+        }
+    };
+
+    // Shuffle cards.
+    const shuffle = (array) => {
+        let currentIndex = array.length;
+        let randomIndex;
+
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
     };
 
 
